@@ -12,7 +12,7 @@ using System.Web.Configuration;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Globalization;
-//using System.Web.Script.Serialization;
+using _360PlusPlugin.Models;
 
 namespace PlusApi.Controllers
 {
@@ -85,7 +85,7 @@ namespace PlusApi.Controllers
             }
 
             PhoneCRM  PhoneCRM = _Customer.GetValue("addressAPI")["phoneAPI"].ToObject<PhoneCRM>();
-            FaxCRM FaxCRM = _Customer.GetValue("addressAPI")["faxAPI"].ToObject<FaxCRM>();
+            PhoneCRM FaxCRM = _Customer.GetValue("addressAPI")["faxAPI"].ToObject<PhoneCRM>();
             TerritoryCRM TerritoryCRM  = _Customer.GetValue("addressAPI")["territoryAPI"].ToObject<TerritoryCRM>();
 
             CustomerCrm customerCRM = _Customer.GetValue("customer").ToObject<CustomerCrm>();

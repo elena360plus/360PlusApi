@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using Newtonsoft.Json;
 using RestSharp;
+using RestSharp.Authenticators;
 
 namespace ApiTest
 {
