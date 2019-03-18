@@ -12,7 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 	ProjectSection(SolutionItems) = preProject
 		Documents\inventory.js = Documents\inventory.js
 		Documents\quote.html = Documents\quote.html
+		Documents\quote.item.template.html = Documents\quote.item.template.html
 		Documents\quote.pdf = Documents\quote.pdf
+		Documents\quote.template.html = Documents\quote.template.html
 		Documents\style.css = Documents\style.css
 	EndProjectSection
 EndProject
