@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spire Quote</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div>
+        <div class="quote-header">
+            <div class="company">
+                <h2>{{comapny_name}}</h2>
+                <ul class="list" style="font-weight: bold">
+                    <li>
+                        {{comapny_street}}
+                    </li>
+                    <li>
+                        {{company_address}}
+                    </li>
+                    <li>
+                        {{company_phones}}
+                    </li>
+                    <li>
+                        {{company_email}}
+                    </li>                
+                </ul>
+            </div>
+            <div class="quote">
+                <h2>Quote</h2>
+                <table>
+                    <tr>
+                        <td colspan="2" style="text-align: center">
+                            <strong>{{quote_number}}</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" >
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Date</b> 
+                        </td>
+                        <td>
+                            {{quote_date}}
+                        </td>
+                    </tr>                    
+                    <tr>
+                        <td>
+                            <b>Customer</b> 
+                        </td>
+                        <td>{{customer_number}}</td>
+                    </tr>                    
+                </table>
+            </div>
+        </div>
+        <div class="quote-addresses">
+            <div class="bill-to">
+                <table>
+                    <tr>
+                        <td style="vertical-align: top">
+                            <b>Bill To:</b>
+                        </td>
+                        <td style="vertical-align: top">
+                            <ul class="list">
+                                <li>Aaa Printing</li>
+                                <li>1552 5th Avenue.</li>
+                                <li>Brownvale AB T0H 0L0</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="ship-to">
+                <table>
+                    <tr>
+                        <td style="vertical-align: top">
+                            <b>Ship To:</b>
+                        </td>
+                        <td style="vertical-align: top">
+                            <ul class="list">
+                                <li>Aaa Printing Ship To:</li>
+                                <li>1552 5th Avenue.</li>
+                                <li>Brownvale AB T0H 0L0</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>                
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="quote-container">
+        <div class="quote-details">
+            <div class="header">
+                <div class="">PO Number</div>
+                <div class="">F.O.B</div>
+                <div class="">Salesperson</div>
+                <div class="">Order Date</div>
+                <div class="">Order Number</div>
+
+                <div class=""></div>
+                <div class=""></div>
+                <div class=""></div>
+                <div class=""></div>
+                <div class=""></div>
+            </div>
+            <div class="details">
+                <div class="">Ship Via</div>
+                <div class="">Payment Terms</div>
+                <div class="">Reference</div>
+
+                <div class=""></div>
+                <div class=""></div>
+                <div class=""></div>
+            </div>
+
+        
+
+            <table class="content-table"  >
+                <tr>
+                    <td>
+                        <div class="description text">
+                            <div>Order By</div>
+                            <div>Jean Simpson</div>                    
+                        </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>                    
+
+                <tr>
+                    <td>
+                        <div class="description">
+                            <div>Part Number</div>
+                            <div>Description</div>                         
+                        </div>
+                    </td>
+                    <td>
+                        <div class="status">
+                            <div>Order</div>
+                            <div>Shipped</div>
+                            <div>B/O</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="price">
+                            <div>Tax</div>
+                            <div>Unit Price</div>
+                            <div>Extended Price</div>
+                        </div>
+                    </td>
+                </tr>
+
+
+                <!--ITEMS-->
+                <tr class="table-text">
+                    <td>
+                        <div class="description">
+                            <div>4RTT</div>
+                            <div>4RTT AbMat</div>                         
+                        </div>
+                    </td>
+                    <td>
+                        <div class="status">
+                            <div>1</div>
+                            <div>0</div>
+                            <div></div>            
+                        </div>
+                    </td>
+                    <td>
+                        <div class="price">
+                            <div>G</div>
+                            <div>0.00</div>
+                            <div>N/C</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table-text">
+                    <td>
+                        <div class="description">
+                            <div>4RTT</div>
+                            <div>4RTT AbMat</div>                         
+                        </div>
+                    </td>
+                    <td>
+                        <div class="status">
+                            <div>1</div>
+                            <div>0</div>
+                            <div></div>            
+                        </div>
+                    </td>
+                    <td>
+                        <div class="price">
+                            <div>G</div>
+                            <div>0.00</div>
+                            <div>N/C</div>
+                        </div>
+                    </td>
+                </tr>   
+                <!--ITEMS-->
+                
+                <tr class="table-text">
+                    <td></td>
+                    <td class="summary" colspan="2">
+                        <table class="summary">
+                            <tr>
+                                <td>Net Amount</td>
+                                <td>0.00</td>
+                            </tr>
+                            <tr>
+                                <td>Freight</td>
+                                <td>5.00</td>
+                            </tr>
+                            <tr>
+                                <td>G.S.T.</td>
+                                <td>0.25</td>
+                            </tr>
+                            <tr>
+                                <td>BC P.S.T.</td>
+                                <td>0.35</td>
+                            </tr>
+                            <tr>
+                                <td>Total Due</td>
+                                <td>5.60</td>
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>   
+    
+            </table>            
+        </div>
+    </div>
+
+    
+</body>
+</html>
+
+
+
