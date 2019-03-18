@@ -12,7 +12,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{E788C40A-A3FF-45D7-8E05-31BAB1B076F9}"
 	ProjectSection(SolutionItems) = preProject
 		Documents\quote.html = Documents\quote.html
+		Documents\quote.item.template.html = Documents\quote.item.template.html
 		Documents\quote.pdf = Documents\quote.pdf
+		Documents\quote.template.html = Documents\quote.template.html
 		Documents\style.css = Documents\style.css
 	EndProjectSection
 EndProject

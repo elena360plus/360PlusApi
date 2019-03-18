@@ -1,31 +1,216 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Spire Quote</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            /* font-family: Roboto, 'Segoe UI', Tahoma, sans-serif; */
+            font-family: Helvetica;
+            font-size: 81.25%;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        .list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .text > * {
+            font-weight: normal;
+        }
+
+        .container {
+            display: grid;
+            height: 100vh;
+        }
+
+        .quote-header {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: baseline;
+            padding: 5px 20px 5px 20px;
+            margin-bottom: 20px;
+        }
+
+
+
+        .company {
+        }
+
+        .quote {
+        }
+
+            .quote h2 {
+                text-align: center;
+            }
+
+        .quote-addresses {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 10px 30px 10px 30px;
+        }
+
+        .bill-to {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        .ship-to {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        .quote-container {
+            padding: 20px;
+        }
+
+        .quote-details {
+            padding: 20px;
+            /* border:1px solid black; */
+        }
+
+            .quote-details > .header {
+                display: grid;
+                border: 1px solid black;
+                border-bottom: none;
+                grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+            }
+
+            .quote-details > .details {
+                display: grid;
+                border: 1px solid black;
+                border-top: none;
+                grid-template-columns: 3fr 2fr 2fr;
+            }
+
+            .quote-details > * > div {
+                border: 1px solid black;
+                text-align: center;
+                font-weight: bold;
+                padding: 5px;
+            }
+
+       
+        .content-table {
+            width: 100%;
+            padding: 0;
+            table-layout: fixed;
+            font-weight: bold;
+            border-spacing: 0 0;
+            empty-cells: show;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+            .content-table > * > tr > td {
+                padding: 5px;
+                border-right: 1px solid black;
+                vertical-align: middle;
+            }
+
+            .content-table > * > * > td:nth-child(1) {
+                border-left: 1px solid black;
+            }
+
+            .content-table > * > tr:last-child > td,
+            .content-table > * > tr:nth-child(1) > td,
+            .content-table > * > tr:nth-child(2) > td,
+            .content-table > * > tr:nth-child(3) > td {
+                border-bottom: 1px solid black;
+            }
+
+
+            .content-table > * > * > td:nth-child(1) {
+                width: 50%;
+            }
+
+            .content-table > * > * > td:nth-child(2) {
+                width: 25%;
+            }
+
+            .content-table > * > * > td:nth-child(3) {
+                width: 25%;
+            }
+
+            .content-table td.summary {
+                border-top: 1px solid black;
+                padding: 5px;
+            }
+
+            .content-table .description {
+                display: grid;
+                width: 100%;
+                grid-template-columns: 2fr 5fr;
+            }
+
+            .content-table .status,
+            .content-table .price {
+                display: grid;
+                width: 100%;
+                grid-template-columns: repeat(3, 1fr);
+                overflow: visible;
+            }
+
+
+        .table-text {
+            font-weight: normal;
+        }
+
+        table.summary {
+            width: 100%;
+            padding: 0;
+            table-layout: fixed;
+            font-weight: bold;
+            border-spacing: 0px 0px;
+            border-collapse: separate;
+            empty-cells: show;
+            text-align: right;
+        }
+
+            table.summary td {
+                border-width: 0;
+            }
+
+                table.summary td:nth-child(1) {
+                    width: 70%;
+                }
+
+                table.summary td:nth-child(2) {
+                    width: 30%;
+                    font-weight: normal;
+                }
+
+            table.summary tr:last-child td:nth-child(2) {
+                font-weight: bold;
+            }
+    </style>
 
 </head>
 <body>
     <div>
         <div class="quote-header">
             <div class="company">
-                <h2>{{comapny_name}}</h2>
+                <h2>{{comapnyName}}</h2>
                 <ul class="list" style="font-weight: bold">
                     <li>
-                        {{comapny_street}}
+                        {{comapnyStreet}}
                     </li>
                     <li>
-                        {{company_address}}
+                        {{companyAddress}}
                     </li>
                     <li>
-                        {{company_phones}}
+                        {{companyPhones}}
                     </li>
                     <li>
-                        {{company_email}}
+                        {{companyEmail}}
                     </li>                
                 </ul>
             </div>
@@ -34,27 +219,25 @@
                 <table>
                     <tr>
                         <td colspan="2" style="text-align: center">
-                            <strong>{{quote_number}}</strong>
+                            <strong>{{quoteNumber}}</strong>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" >
-                            
-                        </td>
+                        <td colspan="2" ></td>
                     </tr>
                     <tr>
                         <td>
                             <b>Date</b> 
                         </td>
                         <td>
-                            {{quote_date}}
+                            {{quoteDate}}
                         </td>
                     </tr>                    
                     <tr>
                         <td>
                             <b>Customer</b> 
                         </td>
-                        <td>{{customer_number}}</td>
+                        <td>{{customerNumber}}</td>
                     </tr>                    
                 </table>
             </div>
@@ -65,12 +248,12 @@
                     <tr>
                         <td style="vertical-align: top">
                             <b>Bill To:</b>
-                        </td>
+                        </td>                        
                         <td style="vertical-align: top">
                             <ul class="list">
-                                <li>Aaa Printing</li>
-                                <li>1552 5th Avenue.</li>
-                                <li>Brownvale AB T0H 0L0</li>
+                                <li>{{billToCompany}}</li>
+                                <li>{{billToStreet}}</li>
+                                <li>{{billToAddress}}</li>
                             </ul>
                         </td>
                     </tr>
@@ -84,9 +267,9 @@
                         </td>
                         <td style="vertical-align: top">
                             <ul class="list">
-                                <li>Aaa Printing Ship To:</li>
-                                <li>1552 5th Avenue.</li>
-                                <li>Brownvale AB T0H 0L0</li>
+                                <li>{{shipToCompany}}</li>
+                                <li>{{shipToStreet}}</li>
+                                <li>{{shipToAddress}}</li>
                             </ul>
                         </td>
                     </tr>
@@ -106,30 +289,28 @@
                 <div class="">Order Date</div>
                 <div class="">Order Number</div>
 
-                <div class=""></div>
-                <div class=""></div>
-                <div class=""></div>
-                <div class=""></div>
-                <div class=""></div>
+                <div class="">{{poNumber}}</div>
+                <div class="">{{fob}}</div>
+                <div class="">{{salesPerson}}</div>
+                <div class="">{{orderDate}}</div>
+                <div class="">{{orderNumber}}</div>
             </div>
             <div class="details">
                 <div class="">Ship Via</div>
                 <div class="">Payment Terms</div>
                 <div class="">Reference</div>
 
-                <div class=""></div>
-                <div class=""></div>
-                <div class=""></div>
+                <div class="">{{shipVia}}</div>
+                <div class="">{{paymentTerms}}</div>
+                <div class="">{{reference}}</div>
             </div>
 
-        
-
-            <table class="content-table"  >
+            <table class="content-table">
                 <tr>
                     <td>
                         <div class="description text">
                             <div>Order By</div>
-                            <div>Jean Simpson</div>                    
+                            <div>{{orderBy}}</div>                    
                         </div>
                     </td>
                     <td></td>
@@ -165,52 +346,8 @@
                     </td>
                 </tr>
 
-
                 <!--ITEMS-->
-                <tr class="table-text">
-                    <td>
-                        <div class="description">
-                            <div>4RTT</div>
-                            <div>4RTT AbMat</div>                         
-                        </div>
-                    </td>
-                    <td>
-                        <div class="status">
-                            <div>1</div>
-                            <div>0</div>
-                            <div></div>            
-                        </div>
-                    </td>
-                    <td>
-                        <div class="price">
-                            <div>G</div>
-                            <div>0.00</div>
-                            <div>N/C</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="table-text">
-                    <td>
-                        <div class="description">
-                            <div>4RTT</div>
-                            <div>4RTT AbMat</div>                         
-                        </div>
-                    </td>
-                    <td>
-                        <div class="status">
-                            <div>1</div>
-                            <div>0</div>
-                            <div></div>            
-                        </div>
-                    </td>
-                    <td>
-                        <div class="price">
-                            <div>G</div>
-                            <div>0.00</div>
-                            <div>N/C</div>
-                        </div>
-                    </td>
-                </tr>   
+                {{quoteItems}}
                 <!--ITEMS-->
                 
                 <tr class="table-text">
@@ -219,23 +356,23 @@
                         <table class="summary">
                             <tr>
                                 <td>Net Amount</td>
-                                <td>0.00</td>
+                                <td>{{totalNetAmount}}</td>
                             </tr>
                             <tr>
                                 <td>Freight</td>
-                                <td>5.00</td>
+                                <td>{{totalFreight}}</td>
                             </tr>
                             <tr>
                                 <td>G.S.T.</td>
-                                <td>0.25</td>
+                                <td>{{totalGST}}</td>
                             </tr>
                             <tr>
-                                <td>BC P.S.T.</td>
-                                <td>0.35</td>
+                                <td>{{pstProvince}} P.S.T.</td>
+                                <td>{{totalPST}}</td>
                             </tr>
                             <tr>
                                 <td>Total Due</td>
-                                <td>5.60</td>
+                                <td>{{totalDue}}</td>
                             </tr>
 
                         </table>
