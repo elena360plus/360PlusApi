@@ -6,13 +6,21 @@ using System.Threading.Tasks;
 
 namespace _360PlusPlugin.Models
 {
-    public class PhoneCRM
+    public class ContactSpire
     {
-        public string number
+        public string name
         {
             get; set;
         }
-        public int? format
+        public string email
+        {
+            get; set;
+        }
+        public PhoneSpire phone
+        {
+            get; set;
+        }
+        public PhoneSpire fax
         {
             get; set;
         }

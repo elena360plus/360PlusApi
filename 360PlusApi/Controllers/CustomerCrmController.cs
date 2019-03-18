@@ -28,7 +28,7 @@ namespace PlusApi.Controllers
                     
        //};
 
-        public static string SendRequest(string uri, CustomerCrm jsonContent)
+        public static string SendRequest(string uri, CustomerSpire jsonContent)
         {
             string NewID = String.Empty;
             string Company = String.Empty;
@@ -77,18 +77,18 @@ namespace PlusApi.Controllers
 
             // CustomerCrm customerCRM =  (CustomerCrm) _Customer.GetType().GetProperty("customer").GetValue(_Customer, null);
 
-           AddressCRM addressCRM = _Customer.GetValue("addressAPI").ToObject<AddressCRM>();
+           AddressSpire addressCRM = _Customer.GetValue("addressAPI").ToObject<AddressSpire>();
             if (addressCRM.country != null && !String.IsNullOrEmpty(addressCRM.country.ToString()))
             {
                 CountryThreeLetters = ConvertCountryNameToThreeLetterName(addressCRM.country.ToString());
                 addressCRM.country = CountryThreeLetters;
             }
 
-            PhoneCRM  PhoneCRM = _Customer.GetValue("addressAPI")["phoneAPI"].ToObject<PhoneCRM>();
-            PhoneCRM FaxCRM = _Customer.GetValue("addressAPI")["faxAPI"].ToObject<PhoneCRM>();
-            TerritoryCRM TerritoryCRM  = _Customer.GetValue("addressAPI")["territoryAPI"].ToObject<TerritoryCRM>();
+            PhoneSpire PhoneCRM = _Customer.GetValue("addressAPI")["phoneAPI"].ToObject<PhoneSpire>();
+            PhoneSpire FaxCRM = _Customer.GetValue("addressAPI")["faxAPI"].ToObject<PhoneSpire>();
+            TerritorySpire TerritoryCRM  = _Customer.GetValue("addressAPI")["territoryAPI"].ToObject<TerritorySpire>();
 
-            CustomerCrm customerCRM = _Customer.GetValue("customer").ToObject<CustomerCrm>();
+            CustomerSpire customerCRM = _Customer.GetValue("customer").ToObject<CustomerSpire>();
 
             customerCRM.address = addressCRM;
             customerCRM.address.phone = PhoneCRM;

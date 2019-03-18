@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _360PlusPlugin.Models
 {
-    public class CustomerCrm
+    public class CustomerSpire
     {
         //  public int id { get; set; }
         public string customerNo
@@ -46,6 +46,6 @@ namespace _360PlusPlugin.Models
             get; set;
         }
 
-        public AddressCRM address;
+        public AddressSpire address;
     }
 }

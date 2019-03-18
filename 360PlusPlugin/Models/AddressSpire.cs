@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _360PlusPlugin.Models
 {
-    public class AddressCRM
+    public class AddressSpire
     {
         public string type
         {
@@ -58,9 +58,9 @@ namespace _360PlusPlugin.Models
             get; set;
         }
 
-        public PhoneCRM phone;
+        public PhoneSpire phone;
 
-        public PhoneCRM fax;
+        public PhoneSpire fax;
         public string email
         {
             get; set;
@@ -84,7 +84,7 @@ namespace _360PlusPlugin.Models
             get; set;
         }
 
-        public TerritoryCRM territory;
+        public TerritorySpire territory;
 
         public string sellLevel
         {

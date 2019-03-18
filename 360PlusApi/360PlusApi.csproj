@@ -167,17 +167,47 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Compile Include="..\360PlusPlugin\Models\AddressCRM.cs">
-      <Link>Models\AddressCRM.cs</Link>
+    <Compile Include="..\360PlusPlugin\Models\AddressSpire.cs">
+      <Link>Models\AddressSpire.cs</Link>
     </Compile>
-    <Compile Include="..\360PlusPlugin\Models\CustomerCRM.cs">
-      <Link>Models\CustomerCRM.cs</Link>
+    <Compile Include="..\360PlusPlugin\Models\baseSpire.cs">
+      <Link>Models\baseSpire.cs</Link>
     </Compile>
-    <Compile Include="..\360PlusPlugin\Models\PhoneCRM.cs">
-      <Link>Models\PhoneCRM.cs</Link>
+    <Compile Include="..\360PlusPlugin\Models\collecytionResponceSpire.cs">
+      <Link>Models\collecytionResponceSpire.cs</Link>
     </Compile>
-    <Compile Include="..\360PlusPlugin\Models\TerritoryCRM.cs">
-      <Link>Models\TerritoryCRM.cs</Link>
+    <Compile Include="..\360PlusPlugin\Models\ContactSpire.cs">
+      <Link>Models\ContactSpire.cs</Link>
+    </Compile>
+    <Compile Include="..\360PlusPlugin\Models\CustomerSpire.cs">
+      <Link>Models\CustomerSpire.cs</Link>
+    </Compile>
+    <Compile Include="..\360PlusPlugin\Models\ItemsSpire.cs">
+      <Link>Models\ItemsSpire.cs</Link>
+    </Compile>
+    <Compile Include="..\360PlusPlugin\Models\LevySpire.cs">
+      <Link>Models\LevySpire.cs</Link>
+    </Compile>
+    <Compile Include="..\360PlusPlugin\Models\LinksSpire.cs">
+      <Link>Models\LinksSpire.cs</Link>
+    </Compile>
+    <Compile Include="..\360PlusPlugin\Models\OrderSpire.cs">
+      <Link>Models\OrderSpire.cs</Link>
+    </Compile>
+    <Compile Include="..\360PlusPlugin\Models\PhoneSpire.cs">
+      <Link>Models\PhoneSpire.cs</Link>
+    </Compile>
+    <Compile Include="..\360PlusPlugin\Models\PricingSpire.cs">
+      <Link>Models\PricingSpire.cs</Link>
+    </Compile>
+    <Compile Include="..\360PlusPlugin\Models\SalesDepartmentSpire.cs">
+      <Link>Models\SalesDepartmentSpire.cs</Link>
+    </Compile>
+    <Compile Include="..\360PlusPlugin\Models\TerritorySpire.cs">
+      <Link>Models\TerritorySpire.cs</Link>
+    </Compile>
+    <Compile Include="..\360PlusPlugin\Models\UomSpire.cs">
+      <Link>Models\UomSpire.cs</Link>
     </Compile>
     <Compile Include="ApiClient.cs" />
     <Compile Include="App_Data\App_Start\BundleConfig.cs" />

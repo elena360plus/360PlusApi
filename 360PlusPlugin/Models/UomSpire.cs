@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace _360PlusPlugin.Models
 {
 
-    public class UomCRM
+    public class UomSpire
     {
         public string Weight { get; set; }
         public string Location { get; set; }
