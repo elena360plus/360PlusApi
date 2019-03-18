@@ -1,0 +1,218 @@
+body
+{
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, 'Segoe UI', Tahoma, sans-serif;
+    font-size: 81.25%;
+}
+
+.container
+{
+    display: grid;
+    height: 100vh;
+}
+
+.quote-header
+{
+    display: flex;    
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: baseline;
+    padding: 5px 20px 5px 20px;
+    margin-bottom: 20px;
+}
+
+.list
+{
+    list-style: none;
+    padding:0;
+    margin: 0;  
+}
+
+.company
+{
+    
+}
+.quote
+{
+  
+}
+
+.quote h2
+{
+    text-align: center;
+}
+
+.quote-addresses 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 30px 10px 30px;
+}
+
+.bill-to
+{
+    flex: 1;
+    padding: 1rem;
+}
+
+.ship-to
+{
+    flex: 1;
+    padding: 1rem;
+}
+
+.quote-container {
+    padding: 20px;
+}
+.quote-details
+{
+    padding: 20px;
+    /* border:1px solid black; */
+}
+
+.quote-details > .header
+{
+    display: grid; 
+    border: 1px solid black;    
+    border-bottom: none;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;  
+}
+
+.quote-details > .details 
+{
+    display: grid; 
+    border: 1px solid black;    
+    border-top: none;
+    grid-template-columns: 3fr 2fr 2fr;  
+}
+
+.quote-details > * > div
+{
+    border: 1px solid black;    
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;
+}
+
+/*
+.quote-details > .content
+{
+    display: grid; 
+    border: 1px solid black;    
+    border-top: none;
+    grid-template-columns: 5fr 2fr 2fr;  
+}
+
+
+.sub-split
+{
+    display: flex;
+    padding: 5px;
+
+    flex-flow: row;
+    align-items: flex-end; 
+}
+
+.sub-split.description > div:nth-child(1)
+{
+    flex-grow: 2;
+    text-align: left;
+}
+  
+.sub-split.description > div:nth-child(2)
+{
+    flex-grow: 5;
+    text-align: left;
+}
+
+.sub-split.status > div
+{
+    flex-grow: 1;
+    text-align: right;
+}
+
+.sub-split.price > div
+{
+    flex-grow: 1;
+    text-align: left;
+}
+
+.text > * { font-weight: normal; }
+*/
+
+
+.content-table
+{
+    width:100%;
+    padding: 0;
+    table-layout: fixed;
+    font-weight: bold;
+    border-spacing: 0 0;
+    empty-cells: show;
+    border-left: 1px solid black; 
+    border-right: 1px solid black; 
+    border-bottom: 1px solid black; 
+}
+
+.content-table > * > tr > td 
+{  
+    padding: 5px;
+    border-right: 1px solid black;  
+    vertical-align: middle;  
+}
+
+.content-table > * > * > td:nth-child(1) { border-left: 1px solid black; }
+
+.content-table > * > tr:last-child > td,
+.content-table > * > tr:nth-child(1) > td,
+.content-table > * > tr:nth-child(2) > td,
+.content-table > * > tr:nth-child(3) > td
+{ border-bottom: 1px solid black; }
+
+
+.content-table > * > * > td:nth-child(1) { width: 50%; }
+.content-table > * > * > td:nth-child(2) { width: 25%; }
+.content-table > * > * > td:nth-child(3) { width: 25%; }
+
+.content-table td.summary { border-top: 1px solid black;  padding: 5px;}
+
+.content-table .description 
+{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 2fr 5fr;
+}
+
+.content-table .status,
+.content-table .price 
+{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    overflow:visible;
+}
+
+
+.table-text { font-weight: normal; }
+
+table.summary
+{
+    width:100%;
+    padding: 0;
+    table-layout: fixed;
+    font-weight: bold;
+    border-spacing: 0px 0px;
+    border-collapse: separate; 
+    empty-cells: show;
+    text-align: right;
+}
+
+table.summary td { border-width: 0; }
+table.summary td:nth-child(1) { width: 70%; }
+table.summary td:nth-child(2) { width: 30%; font-weight: normal; }
+table.summary tr:last-child td:nth-child(2) { font-weight: bold; }
+ 
+
+ 
