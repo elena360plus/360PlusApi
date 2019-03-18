@@ -70,8 +70,15 @@
     <Compile Include="Entities\Opportunity\Opportunity_SetStateDynamicEntity.cs" />
     <Compile Include="Models\AddressCRM.cs" />
     <Compile Include="Models\CustomerCRM.cs" />
+    <Compile Include="Models\InventoryCRM.cs" />
+    <Compile Include="Models\LevyCRM.cs" />
+    <Compile Include="Models\LinksCRM.cs" />
     <Compile Include="Models\PhoneCRM.cs" />
+    <Compile Include="Models\PricingCRM.cs" />
+    <Compile Include="Models\RecordCRM.cs" />
+    <Compile Include="Models\SalesDepartmentCRM.cs" />
     <Compile Include="Models\TerritoryCRM.cs" />
+    <Compile Include="Models\UomCRM.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\ExceptionRouter.cs" />
