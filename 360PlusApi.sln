@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
@@ -8,6 +8,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "360Plus.Plugin", "360PlusPlugin\360Plus.Plugin.csproj", "{F88667BA-AE9D-475B-A796-C9921CF38B37}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "360Plus.CustomAction", "360Plus.CustomAction\360Plus.CustomAction.csproj", "{636169EE-3EC9-4332-BB1F-04A365890508}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{E788C40A-A3FF-45D7-8E05-31BAB1B076F9}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\quote.html = Documents\quote.html
+		Documents\quote.pdf = Documents\quote.pdf
+		Documents\style.css = Documents\style.css
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
