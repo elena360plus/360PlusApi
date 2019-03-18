@@ -7,7 +7,7 @@ namespace PlusApi.Models
 
 {
    
-    public class CustomerClient : BaseObjectClient<CustomerCrm>
+    public class CustomerClient : BaseObjectClient<CustomerSpire>
     {
         public CustomerClient(ApiClient client) : base(client) { }
 
@@ -20,7 +20,7 @@ namespace PlusApi.Models
         }
     }
 
-    public class CustomerClientAddress : BaseObjectClient<AddressCRM>
+    public class CustomerClientAddress : BaseObjectClient<AddressSpire>
     {
         public CustomerClientAddress(ApiClient client) : base(client) { }
 
