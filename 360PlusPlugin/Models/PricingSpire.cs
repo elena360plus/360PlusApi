@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace _360PlusPlugin.Models
 {
 	
-    public class PricingCRM
+    public class PricingSpire
     {
         public string CurrMargin { get; set; }
         public string AvgMarginPct { get; set; }

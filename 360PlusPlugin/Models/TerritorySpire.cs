@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _360PlusPlugin.Models
 {
-    public class TerritoryCRM
+    public class TerritorySpire
     {
         public string code
         {

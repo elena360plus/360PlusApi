@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace _360PlusPlugin.Models
 {
 
-    public class RecordCRM
+    public class ItemsSpire : baseSpire
     {
         public string ThisYearSales { get; set; }
         public string OnHandQty { get; set; }
@@ -86,11 +86,11 @@ namespace _360PlusPlugin.Models
         public object LastCountVariance { get; set; }
 		//unknown format
 		
-        public UomCRM Uom { get; set; }
-        public LevyCRM Levy { get; set; }
-        public LinksCRM Links { get; set; }
-        public PricingCRM Pricing { get; set; }
-        public SalesDepartmentCRM SalesDepartment { get; set; }
+        public UomSpire Uom { get; set; }
+        public LevySpire Levy { get; set; }
+        public LinksSpire Links { get; set; }
+        public PricingSpire Pricing { get; set; }
+        public SalesDepartmentSpire SalesDepartment { get; set; }
 		
     }
 
