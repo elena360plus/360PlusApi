@@ -226,13 +226,7 @@ namespace _360PlusPlugin.Utility
         }
 
         #endregion Global Methods
-
-
-
-
-
-
-
+        
         #region Attachments, Annotations, WebResources
 
         public static XmlDocument retrieveXMLWebResource(IOrganizationService service, string webresourceName)
@@ -329,5 +323,6 @@ namespace _360PlusPlugin.Utility
 
         #endregion
 
+        
     }
 }

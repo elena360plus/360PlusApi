@@ -13,7 +13,9 @@
 //  PARTICULAR PURPOSE.
 // =====================================================================
 
+
 using Microsoft.Xrm.Sdk;
+using SpirePlusPlugin;
 using System;
 using System.Globalization;
 using System.ServiceModel;
@@ -200,7 +202,11 @@ namespace _360PlusPlugin
         /// <param name="localcontext">Context for the current plug-in.</param>
         protected virtual void ExecuteCrmPlugin(LocalPluginContext localContext)
         {
-            // Do nothing. 
+
+            XrmServiceContext ctx = new XrmServiceContext(localContext.OrganizationService);
+
+            
+
         }
     }
 }
