@@ -22,7 +22,7 @@ namespace _360PlusPlugin.Utility
 
             var newAccount = (from ac in ctx.AccountSet where ac.AccountId == _AccountId select ac).FirstOrDefault();
             if (newAccount == null) return "Error: New Account is Empty";
-            Models.CustomerCrm modelCustomerFromCRM = GetModelAccountFromCRM(ctx, newAccount);
+            Models.CustomerSpire modelCustomerFromCRM = GetModelAccountFromCRM(ctx, newAccount);
 
             try
             {
@@ -44,7 +44,7 @@ namespace _360PlusPlugin.Utility
             return String.Empty;
         }
 
-        public static Models.CustomerCrm  GetModelAccountFromCRM(xrm.XrmServiceContext ctx, xrm.Account ac)
+        public static Models.CustomerSpire  GetModelAccountFromCRM(xrm.XrmServiceContext ctx, xrm.Account ac)
         {
             #region Get Currency
 
@@ -57,7 +57,7 @@ namespace _360PlusPlugin.Utility
             #endregion
 
             #region Create Spire Customer Model
-            return new Models.CustomerCrm()
+            return new Models.CustomerSpire()
             {
 
                 name = ac.Name,
