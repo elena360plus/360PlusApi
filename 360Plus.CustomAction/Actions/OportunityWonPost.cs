@@ -67,7 +67,7 @@ namespace _360Plus.CustomAction.Actions
 
                 httpWebRequest.PreAuthenticate = true;
                 httpWebRequest.Credentials = credentialCache;
-
+                httpWebRequest.Method = "POST";
 
 
                 using (HttpWebResponse webResponse = httpWebRequest.GetResponse() as HttpWebResponse)

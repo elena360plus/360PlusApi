@@ -97,6 +97,7 @@
     <Compile Include="Utility\ExceptionRouter.cs" />
     <Compile Include="Utility\GlobalHelper.cs" />
     <Compile Include="Utility\SpireHelper.cs" />
+    <Compile Include="Utility\Spire_Xrm_Base.cs" />
     <Compile Include="Xrm.cs" />
   </ItemGroup>
   <ItemGroup>

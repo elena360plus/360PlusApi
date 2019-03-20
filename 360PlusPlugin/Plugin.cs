@@ -203,7 +203,7 @@ namespace _360PlusPlugin
         protected virtual void ExecuteCrmPlugin(LocalPluginContext localContext)
         {
 
-            XrmServiceContext ctx = new XrmServiceContext(localContext.OrganizationService);
+          
 
             
 

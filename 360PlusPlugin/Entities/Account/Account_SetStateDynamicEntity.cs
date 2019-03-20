@@ -3,6 +3,12 @@ using System.Linq;
 using System.ServiceModel;
 using Microsoft.Xrm.Sdk;
 using xrm = SpirePlusPlugin;
+using be = Spire_BusinessEntities;
+using _360PlusPlugin.Utility;
+using _360PlusPlugin.Models;
+using System.Net;
+using System.IO;
+using System.Runtime.Serialization.Json;
 
 namespace _360PlusPlugin.Entities.Account
 {
@@ -32,21 +38,30 @@ namespace _360PlusPlugin.Entities.Account
             ITracingService tracingService = localContext.TracingService;
             var ctx = new xrm.XrmServiceContext(service);
 
-          
-            // TODO: Implement your custom code
+            string Result = String.Empty;
 
-            if (context.MessageName == "Create" && context.InputParameters.Contains("Target"))
+        
+            // if (context.MessageName == "Create" && context.InputParameters.Contains("Target"))
+            try
             {
-                Entity entity = (Entity)context.InputParameters["Target"];
-                Guid entityId = (Guid)entity.Id;
 
-              
+                if (context.InputParameters.Contains("Target"))
+                {
+                    Entity entity = (Entity)context.InputParameters["Target"];
+                    Guid entityId = (Guid)entity.Id;
+                    Result = new be.SpireHelper(ctx, context.PrimaryEntityName, entityId).SpirePostMethod_Account(entityId, service);
 
-
+                }
 
             }
 
+            catch (WebException ex)
+            {
+                ExceptionRouter.handlePluginException(ex, ChildClassName, tracingService);
+            }
 
         }
+        
+
     }
 }
