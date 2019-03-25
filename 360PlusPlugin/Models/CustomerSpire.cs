@@ -58,6 +58,9 @@ namespace _360PlusPlugin.Models
             get; set;
         }
         [DataMember]
-        public AddressSpire address;
+        public AddressSpire address
+        {
+            get; set;
+        }
     }
 }
