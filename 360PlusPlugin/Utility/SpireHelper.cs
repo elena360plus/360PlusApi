@@ -159,6 +159,8 @@ namespace  Spire_BusinessEntities
             string _postalCode = String.Empty;
             string _provState = String.Empty;
             string _country = String.Empty;
+            string _phone = String.Empty;
+            string _fax = String.Empty;
 
             #endregion
 
@@ -166,25 +168,37 @@ namespace  Spire_BusinessEntities
 
             #region Get Country, Name and No
 
-            _linkNo = ac.AccountNumber;
-            _name = ac.Name;
+
+
 
             if (fromAccount && ac.tsp_Country != null && ac.tsp_Country.Id != Guid.Empty)
             {
+                _linkNo = ac.AccountNumber;
                 _country = (from cc in ctx.tsp_countrySet where cc.tsp_countryId == ac.tsp_Country.Id select cc.tsp_Code).FirstOrDefault();
                 _type = "B";
-               
+                _name = ac.Name;
+                _linkTable = "CUST";
+                _phone = ac.Telephone1;
+                _fax = ac.Fax;
+
+
             }
             if (!fromAccount)
             {
-               
-                _country = ad.tsp_Coutry != null ? ad.Country: null;
+                _name = ad.Name;
+                _country = ad.Country != null ? ad.Country: null;
                 _type = ad.AddressTypeCode != null && ad.AddressTypeCode.Value == 1 ? "B": "S";
-                _shipId = ad.AddressTypeCode != null ? ad.FormattedValues["addresstypecode"].ToString() : "Ship To";
+                _shipId = ad.Name;// ad.AddressTypeCode != null ? ad.FormattedValues["addresstypecode"].ToString() : "Ship To";
+                _linkNo = "CUST" + ac.AccountNumber.ToString();// + "             " + _name;
+                _linkTable = "SHIP";
+                _phone = ad.Telephone1;
+                _fax = ad.Fax;
             }
+
+          
             #endregion
 
-            _linkTable = "CUST";
+           
             _streetAddress = fromAccount? ac.Address1_Line1: ad.Line1;
             _line1 = fromAccount ? ac.Address1_Line1 : ad.Line1;
             _line2 = fromAccount ? ac.Address1_Line2 : ad.Line2;
@@ -197,7 +211,7 @@ namespace  Spire_BusinessEntities
             return new _360PlusPlugin.Models.AddressSpire()
             {
                 type = _type,
-                linkTable = "CUST",
+                linkTable = "SHIP",
                 linkNo = _linkNo,
                 shipId = _shipId,
                 name = _name,
@@ -272,6 +286,7 @@ namespace  Spire_BusinessEntities
                     using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                     {
                     string jsonMsg =  SerializeDataInJSON(messages,Sur);
+                    jsonMsg = jsonMsg.Replace("null", @"""""");
                         streamWriter.Write(jsonMsg);
                         streamWriter.Flush();
                         streamWriter.Close();
