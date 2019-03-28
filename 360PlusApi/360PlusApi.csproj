@@ -192,6 +192,9 @@
     <Compile Include="..\360PlusPlugin\Models\OrderSpire.cs">
       <Link>Models\OrderSpire.cs</Link>
     </Compile>
+    <Compile Include="..\360PlusPlugin\Models\PaymentTermsSpire.cs">
+      <Link>Models\PaymentTermsSpire.cs</Link>
+    </Compile>
     <Compile Include="..\360PlusPlugin\Models\PhoneSpire.cs">
       <Link>Models\PhoneSpire.cs</Link>
     </Compile>

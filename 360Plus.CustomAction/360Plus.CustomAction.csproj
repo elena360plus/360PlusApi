@@ -93,6 +93,9 @@
     <Compile Include="..\360PlusPlugin\Models\OrderSpire.cs">
       <Link>Models\OrderSpire.cs</Link>
     </Compile>
+    <Compile Include="..\360PlusPlugin\Models\PaymentTermsSpire.cs">
+      <Link>Models\PaymentTermsSpire.cs</Link>
+    </Compile>
     <Compile Include="..\360PlusPlugin\Models\PhoneSpire.cs">
       <Link>Models\PhoneSpire.cs</Link>
     </Compile>
@@ -125,7 +128,12 @@
     <None Include="360PlusKey.snk" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\360PlusPlugin\360Plus.Plugin.csproj">
+      <Project>{F88667BA-AE9D-475B-A796-C9921CF38B37}</Project>
+      <Name>360Plus.Plugin</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

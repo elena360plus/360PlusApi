@@ -45,9 +45,9 @@ namespace _360PlusPlugin.Entities.Account
             var ctx = new xrm.XrmServiceContext(service);
 
             string Result = String.Empty;
+            string MessageName = context.MessageName;
 
-        
-            // if (context.MessageName == "Create" && context.InputParameters.Contains("Target"))
+          //  if (context.MessageName == "Create" && context.InputParameters.Contains("Target"))
             try
             {
 
@@ -59,24 +59,56 @@ namespace _360PlusPlugin.Entities.Account
                     if (context.PrimaryEntityName == accountEntity)
                     {
 
-                        Result = new be.SpireHelper(ctx, context.PrimaryEntityName, entityId).SpirePostMethod_Account(entityId, service);
+                        Result = new be.SpireHelper(ctx, context.PrimaryEntityName, entityId).SpirePostMethod_Account(entityId, service, MessageName);
 
-                        if (!String.IsNullOrEmpty(Result))
+                        if (!String.IsNullOrEmpty(Result) && !Result.Contains("Error"))
                         {
 
+                            string[] resultIds = Result.Split(':');
+                            
                             Entity _account = new Entity("account");
                             _account.Id = entityId;
                             if (!_account.Contains("tsp_spireid"))
-                                _account.Attributes.Add("tsp_spireid", Result);
-                            else _account["tsp_spireid"] = Result;
+                                _account.Attributes.Add("tsp_spireid", resultIds[0]);
+                            else _account["tsp_spireid"] = resultIds[0];
+
+
+                            if (!String.IsNullOrEmpty(resultIds[1]))
+                                {
+
+                                if (!_account.Contains("tsp_billingaddressid"))
+                                    _account.Attributes.Add("tsp_billingaddressid", resultIds[1]);
+                                else _account["tsp_billingaddressid"] = resultIds[1];
+
+                               }
+
                             service.Update(_account);
+                        }
+
+                        else if(!String.IsNullOrEmpty(Result) && Result.Contains("Error")) {
+                            throw new ArgumentException(Result);
                         }
                     }
                     else if (context.PrimaryEntityName == addressEntity)
                     {
 
-                        Result = new be.SpireHelper(ctx, context.PrimaryEntityName, entityId).SpirePostMethod_Address(entityId, service);
+                        Result = new be.SpireHelper(ctx, context.PrimaryEntityName, entityId).SpirePostMethod_Address(entityId, service, MessageName);
 
+                        if (!String.IsNullOrEmpty(Result) && !Result.Contains("Error"))
+                        {
+
+                            Entity _address = new Entity(context.PrimaryEntityName);
+                            _address.Id = entityId;
+                            if (!_address.Contains("tsp_addressid"))
+                                _address.Attributes.Add("tsp_addressid", Result);
+                            else _address["tsp_addressid"] = Result;
+                            service.Update(_address);
+                        }
+
+                        else if (!String.IsNullOrEmpty(Result) && Result.Contains("Error"))
+                        {
+                            throw new ArgumentException(Result);
+                        }
 
                     }
                 }
@@ -85,7 +117,7 @@ namespace _360PlusPlugin.Entities.Account
 
             catch (Exception ex)
             {
-                
+                throw new InvalidPluginExecutionException(ex.Message + ":"+ ex.StackTrace);
             }
 
         }

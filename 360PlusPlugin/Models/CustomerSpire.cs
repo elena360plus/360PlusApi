@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _360PlusPlugin.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -62,5 +63,12 @@ namespace _360PlusPlugin.Models
         {
             get; set;
         }
+
+        [DataMember]
+        public paymentTermsSpire paymentTerms
+        {
+            get; set;
+        }
+        
     }
 }

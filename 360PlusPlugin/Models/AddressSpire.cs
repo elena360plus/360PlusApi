@@ -102,10 +102,15 @@ namespace _360PlusPlugin.Models
         {
             get; set;
         }
-
+        [DataMember]
         public TerritorySpire territory;
-
-        public string sellLevel
+       
+       [DataMember]
+        public ContactSpire[] contacts
+        {
+            get; set;
+        }
+    public string sellLevel
         {
             get; set;
         }

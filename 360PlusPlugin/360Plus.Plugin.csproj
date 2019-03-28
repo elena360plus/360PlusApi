@@ -53,6 +53,9 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
@@ -84,6 +87,7 @@
     <Compile Include="Models\LevySpire.cs" />
     <Compile Include="Models\LinksSpire.cs" />
     <Compile Include="Models\OrderSpire.cs" />
+    <Compile Include="Models\PaymentTermsSpire.cs" />
     <Compile Include="Models\PhoneSpire.cs" />
     <Compile Include="Models\PricingSpire.cs" />
     <Compile Include="Models\ItemsSpire.cs" />
@@ -92,6 +96,7 @@
     <Compile Include="Models\UomSpire.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Enum.cs" />
     <Compile Include="Utility\ExceptionRouter.cs" />
     <Compile Include="Utility\GlobalHelper.cs" />
     <Compile Include="Utility\SpireHelper.cs" />
