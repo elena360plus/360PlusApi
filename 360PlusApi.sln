@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "360PlusApi", "360PlusApi\360PlusApi.csproj", "{352E08E0-0B22-4AEA-BA8A-2C9D38CFC37D}"
 EndProject
@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CRMSolutions", "CRMSolution
 		CRMSolutions\PlusDevWorkflows_1_0_0_0.zip = CRMSolutions\PlusDevWorkflows_1_0_0_0.zip
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "360Plus.Workflow", "360Plus.Workflow\360Plus.Workflow.csproj", "{1B9AC612-E678-41C7-9830-544B20F66991}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{05CC712A-4BBD-40E3-A823-3F450C9E0DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05CC712A-4BBD-40E3-A823-3F450C9E0DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05CC712A-4BBD-40E3-A823-3F450C9E0DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B9AC612-E678-41C7-9830-544B20F66991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B9AC612-E678-41C7-9830-544B20F66991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B9AC612-E678-41C7-9830-544B20F66991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B9AC612-E678-41C7-9830-544B20F66991}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

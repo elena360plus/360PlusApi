@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.ServiceModel;
 using Microsoft.Xrm.Sdk;
 using xrm = SpirePlusPlugin;
 using System.Net;
 using _360PlusPlugin.Models;
 using System.Runtime.Serialization.Json;
 using System.IO;
-using Spire_BusinessEntities;
-using _360PlusPlugin.Utility;
 using Newtonsoft.Json.Linq;
 
-namespace  Spire_BusinessEntities
+namespace Spire_BusinessEntities
 {
     public class SpireHelper : Spire_Xrm_Base
     {
