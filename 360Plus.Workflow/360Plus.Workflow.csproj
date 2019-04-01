@@ -54,6 +54,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="PresentationFramework" />
+    <Reference Include="Select.HtmlToPdf, Version=18.4.0.0, Culture=neutral, PublicKeyToken=e0ae9f6e27a97018, processorArchitecture=MSIL">
+      <HintPath>..\packages\Select.HtmlToPdf.18.4.0\lib\net40\Select.HtmlToPdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Activities.Presentation" />
