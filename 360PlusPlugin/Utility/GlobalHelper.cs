@@ -321,6 +321,22 @@ namespace _360PlusPlugin.Utility
             return new Guid();
         }
 
+        public static Guid? createAnnotationDocument(IOrganizationService service, string documentbody, string filename, string mimetype, string subject, EntityReference objectid, string objectTypeCode)
+        {
+            Entity note = new Entity("annotation");
+
+            note["documentbody"] = documentbody;
+            note["filename"] = filename;
+            note["isdocument"] = true;
+            note["mimetype"] = mimetype;
+            note["objectid"] = objectid;
+            note["objecttypecode"] = objectTypeCode;
+            note["subject"] = subject;
+
+            return service.Create(note);
+
+        }
+
         #endregion
 
         
