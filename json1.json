@@ -1,0 +1,30 @@
+{
+    "customer": {
+    "id": 277,
+    "code": "ADVA284",
+    "customerNo": "ADVA284",
+    "name": "Advantage Computers Inc"
+  },
+     "orderDate":"2019-03-28",
+   "requiredDate": "2019-03-28",
+  "items": [
+    {
+      "sequence": 1,
+      "inventory": {
+        "id": 25018,
+        "partNo": "WALEQBELHAR",
+        "description": "Walcom Belt harness"
+      },
+      "partNo": "BLUSYRP",
+      "description": "Bluberry Syrup",
+      "orderQty": "2"
+    }
+  ],
+
+  "shippingAddress": {
+    "id": 3911,
+    "type": "S"
+  }
+}
+
+

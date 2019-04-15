@@ -78,20 +78,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Account\AccountToSpire.cs" />
+    <Compile Include="Entities\Contact\ContactToSpire.cs" />
     <Compile Include="Entities\Opportunity\Opportunity_SetStateDynamicEntity.cs" />
     <Compile Include="Models\AddressSpire.cs" />
     <Compile Include="Models\baseSpire.cs" />
+    <Compile Include="Models\ContactFirstLastName.cs" />
     <Compile Include="Models\ContactSpire.cs" />
     <Compile Include="Models\CustomerSpire.cs" />
+    <Compile Include="Models\CustomerAllItemsSpire.cs" />
     <Compile Include="Models\collecytionResponceSpire.cs" />
     <Compile Include="Models\LevySpire.cs" />
     <Compile Include="Models\LinksSpire.cs" />
+    <Compile Include="Models\OrderItemSpire.cs" />
     <Compile Include="Models\OrderSpire.cs" />
     <Compile Include="Models\PaymentTermsSpire.cs" />
     <Compile Include="Models\PhoneSpire.cs" />
     <Compile Include="Models\PricingSpire.cs" />
     <Compile Include="Models\ItemsSpire.cs" />
     <Compile Include="Models\SalesDepartmentSpire.cs" />
+    <Compile Include="Models\ShipToForOrderSpire.cs" />
     <Compile Include="Models\TerritorySpire.cs" />
     <Compile Include="Models\UomSpire.cs" />
     <Compile Include="Plugin.cs" />

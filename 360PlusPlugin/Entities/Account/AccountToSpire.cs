@@ -41,7 +41,7 @@ namespace _360PlusPlugin.Entities.Account
             // Use the factory to generate the organization service.
             IOrganizationService service = factory.CreateOrganizationService(context.UserId);
 
-
+            if (context.PrimaryEntityName == addressEntity && context.Depth > 2) return;
             var ctx = new xrm.XrmServiceContext(service);
 
             string Result = String.Empty;
@@ -59,7 +59,7 @@ namespace _360PlusPlugin.Entities.Account
                     if (context.PrimaryEntityName == accountEntity)
                     {
 
-                        Result = new be.SpireHelper(ctx, context.PrimaryEntityName, entityId).SpirePostMethod_Account(entityId, service, MessageName);
+                        Result = new be.SpireHelper(ctx, context.PrimaryEntityName, entityId).SpirePostMethod_Account(entityId, service, MessageName, context.Depth);
 
                         if (!String.IsNullOrEmpty(Result) && !Result.Contains("Error"))
                         {
@@ -92,7 +92,7 @@ namespace _360PlusPlugin.Entities.Account
                     else if (context.PrimaryEntityName == addressEntity)
                     {
 
-                        Result = new be.SpireHelper(ctx, context.PrimaryEntityName, entityId).SpirePostMethod_Address(entityId, service, MessageName);
+                        Result = new be.SpireHelper(ctx, context.PrimaryEntityName, entityId).SpirePostMethod_Address(entityId, service, MessageName, context.Depth, Guid.Empty);
 
                         if (!String.IsNullOrEmpty(Result) && !Result.Contains("Error"))
                         {
@@ -117,7 +117,7 @@ namespace _360PlusPlugin.Entities.Account
 
             catch (Exception ex)
             {
-                throw new InvalidPluginExecutionException(ex.Message + ":"+ ex.StackTrace);
+                throw new InvalidPluginExecutionException(ex.Message );
             }
 
         }

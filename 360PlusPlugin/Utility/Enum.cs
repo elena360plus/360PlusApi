@@ -18,6 +18,13 @@ namespace _360PlusPlugin.Utility
         PreAuthDebit = 8
     }
 
-  
+    public enum ContactType
+    {
+        Main = 1,
+        Sales = 2,
+        Accounting = 3,
+        Other = 4
+    }
+
 
 }

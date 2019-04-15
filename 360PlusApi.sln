@@ -22,8 +22,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppWalkthrough", "Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CRMSolutions", "CRMSolutions", "{F7A214C9-C2F8-4989-9F13-FD867424373E}"
 	ProjectSection(SolutionItems) = preProject
-		CRMSolutions\PlusDev_1_0_0_0.zip = CRMSolutions\PlusDev_1_0_0_0.zip
-		CRMSolutions\PlusDevWorkflows_1_0_0_0.zip = CRMSolutions\PlusDevWorkflows_1_0_0_0.zip
+		\\tsclient\D\Spire Solition\CRM_Solutions\CRM Solutions 4_15_2019\PluginSolution_1_0_0_0 (1).zip = \\tsclient\D\Spire Solition\CRM_Solutions\CRM Solutions 4_15_2019\PluginSolution_1_0_0_0 (1).zip
+		\\tsclient\D\Spire Solition\CRM_Solutions\CRM Solutions 4_15_2019\PlusDevEntities_1_0_0_0 (1).zip = \\tsclient\D\Spire Solition\CRM_Solutions\CRM Solutions 4_15_2019\PlusDevEntities_1_0_0_0 (1).zip
+		\\tsclient\D\Spire Solition\CRM_Solutions\CRM Solutions 4_15_2019\PlusDevWorkflows_1_0_0_0.zip = \\tsclient\D\Spire Solition\CRM_Solutions\CRM Solutions 4_15_2019\PlusDevWorkflows_1_0_0_0.zip
+		\\tsclient\D\Spire Solition\CRM_Solutions\CRM Solutions 4_15_2019\SpireWebResources_1_0_0_0.zip = \\tsclient\D\Spire Solition\CRM_Solutions\CRM Solutions 4_15_2019\SpireWebResources_1_0_0_0.zip
 	EndProjectSection
 EndProject
 Global

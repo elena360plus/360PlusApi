@@ -174,8 +174,14 @@
     <Compile Include="..\360PlusPlugin\Models\collecytionResponceSpire.cs">
       <Link>Models\collecytionResponceSpire.cs</Link>
     </Compile>
+    <Compile Include="..\360PlusPlugin\Models\ContactFirstLastName.cs">
+      <Link>Models\ContactFirstLastName.cs</Link>
+    </Compile>
     <Compile Include="..\360PlusPlugin\Models\ContactSpire.cs">
       <Link>Models\ContactSpire.cs</Link>
+    </Compile>
+    <Compile Include="..\360PlusPlugin\Models\CustomerAllItemsSpire.cs">
+      <Link>Models\CustomerAllItemsSpire.cs</Link>
     </Compile>
     <Compile Include="..\360PlusPlugin\Models\CustomerSpire.cs">
       <Link>Models\CustomerSpire.cs</Link>
@@ -188,6 +194,9 @@
     </Compile>
     <Compile Include="..\360PlusPlugin\Models\LinksSpire.cs">
       <Link>Models\LinksSpire.cs</Link>
+    </Compile>
+    <Compile Include="..\360PlusPlugin\Models\OrderItemSpire.cs">
+      <Link>Models\OrderItemSpire.cs</Link>
     </Compile>
     <Compile Include="..\360PlusPlugin\Models\OrderSpire.cs">
       <Link>Models\OrderSpire.cs</Link>
@@ -203,6 +212,9 @@
     </Compile>
     <Compile Include="..\360PlusPlugin\Models\SalesDepartmentSpire.cs">
       <Link>Models\SalesDepartmentSpire.cs</Link>
+    </Compile>
+    <Compile Include="..\360PlusPlugin\Models\ShipToForOrderSpire.cs">
+      <Link>Models\ShipToForOrderSpire.cs</Link>
     </Compile>
     <Compile Include="..\360PlusPlugin\Models\TerritorySpire.cs">
       <Link>Models\TerritorySpire.cs</Link>

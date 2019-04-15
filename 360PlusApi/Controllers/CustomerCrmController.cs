@@ -28,7 +28,7 @@ namespace PlusApi.Controllers
                     
        //};
 
-        public static string SendRequest(string uri, CustomerSpire jsonContent)
+        public static string SendRequest(string uri, _360PlusPlugin.Models.CustomerAllItemsSpire jsonContent)
         {
             string NewID = String.Empty;
             string Company = String.Empty;
@@ -88,7 +88,7 @@ namespace PlusApi.Controllers
             PhoneSpire FaxCRM = _Customer.GetValue("addressAPI")["faxAPI"].ToObject<PhoneSpire>();
             TerritorySpire TerritoryCRM  = _Customer.GetValue("addressAPI")["territoryAPI"].ToObject<TerritorySpire>();
 
-            CustomerSpire customerCRM = _Customer.GetValue("customer").ToObject<CustomerSpire>();
+            _360PlusPlugin.Models.CustomerAllItemsSpire customerCRM = _Customer.GetValue("customer").ToObject<_360PlusPlugin.Models.CustomerAllItemsSpire>();
 
             customerCRM.address = addressCRM;
             customerCRM.address.phone = PhoneCRM;
