@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "360PlusApi", "360PlusApi\360PlusApi.csproj", "{352E08E0-0B22-4AEA-BA8A-2C9D38CFC37D}"
 EndProject
@@ -28,8 +28,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CRMSolutions", "CRMSolution
 		\\tsclient\D\Spire Solition\CRM_Solutions\CRM Solutions 4_15_2019\SpireWebResources_1_0_0_0.zip = \\tsclient\D\Spire Solition\CRM_Solutions\CRM Solutions 4_15_2019\SpireWebResources_1_0_0_0.zip
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampaignResponseDemo", "CampaignResponseDemo\CampaignResponseDemo.csproj", "{969E9FE0-9275-45A9-9AC5-7D5D5B22A422}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,10 +50,6 @@ Global
 		{05CC712A-4BBD-40E3-A823-3F450C9E0DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05CC712A-4BBD-40E3-A823-3F450C9E0DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05CC712A-4BBD-40E3-A823-3F450C9E0DBA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{969E9FE0-9275-45A9-9AC5-7D5D5B22A422}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{969E9FE0-9275-45A9-9AC5-7D5D5B22A422}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{969E9FE0-9275-45A9-9AC5-7D5D5B22A422}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{969E9FE0-9275-45A9-9AC5-7D5D5B22A422}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
