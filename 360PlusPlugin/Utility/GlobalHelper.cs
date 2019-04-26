@@ -339,6 +339,69 @@ namespace _360PlusPlugin.Utility
 
         #endregion
 
-        
+        #region quotes
+
+        public static void quoteToOrder(IOrganizationService service, Entity quote, bool deleteOrder)
+        {
+
+            //set quote won
+            WinQuoteRequest winQuoteRequest = new WinQuoteRequest();
+
+
+
+            Entity QuoteClose = new Entity("quoteclose");
+            
+            QuoteClose["subject"] = "Quote Close" + DateTime.Now.ToString();
+            QuoteClose["quoteid"] = quote.ToEntityReference();
+            //service.Create(QuoteClose);
+            winQuoteRequest.Status = new OptionSetValue(-1);
+            winQuoteRequest.QuoteClose = QuoteClose;
+            service.Execute(winQuoteRequest);
+            
+            //setQuoteStatus(service, quote.ToEntityReference(), 1, 4);//active, won
+
+            ColumnSet salesOrderColumns = new ColumnSet("salesorderid", "totalamount");
+
+            // Convert the quote to a sales order
+            ConvertQuoteToSalesOrderRequest convertQuoteRequest =
+                new ConvertQuoteToSalesOrderRequest()
+                {
+                    QuoteId = quote.Id,
+                    ColumnSet = salesOrderColumns
+                };
+            ConvertQuoteToSalesOrderResponse convertQuoteResponse =
+                (ConvertQuoteToSalesOrderResponse)service.Execute(convertQuoteRequest);
+            if (deleteOrder)
+            {
+                Entity OrderClose = new Entity("orderclose");
+                OrderClose["salesorderid"] = convertQuoteResponse.Entity.ToEntityReference();
+                OrderClose["subject"] = "Close Sales Order " + DateTime.Now;
+
+                CancelSalesOrderRequest cancelRequest = new CancelSalesOrderRequest()
+                {
+                    OrderClose = OrderClose,
+                    Status = new OptionSetValue(-1)
+                };
+                service.Execute(cancelRequest);
+                service.Delete("salesorder", convertQuoteResponse.Entity.Id);
+
+            }
+        }
+
+        public static void setQuoteStatus(IOrganizationService service, EntityReference quoteRef, int statecode, int statuscode)
+        {
+
+            SetStateRequest activateQuote = new SetStateRequest()
+            {
+                EntityMoniker = quoteRef,
+                State = new OptionSetValue(statecode), 
+                Status = new OptionSetValue(statuscode) 
+            };
+            service.Execute(activateQuote);
+
+        }
+
+        #endregion quotes
+
     }
 }

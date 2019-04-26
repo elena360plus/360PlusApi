@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "360PlusApi", "360PlusApi\360PlusApi.csproj", "{352E08E0-0B22-4AEA-BA8A-2C9D38CFC37D}"
 EndProject
@@ -17,8 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 		Documents\quote.template.html = Documents\quote.template.html
 		Documents\style.css = Documents\style.css
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppWalkthrough", "ConsoleAppWalkthrough\ConsoleAppWalkthrough.csproj", "{05CC712A-4BBD-40E3-A823-3F450C9E0DBA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CRMSolutions", "CRMSolutions", "{F7A214C9-C2F8-4989-9F13-FD867424373E}"
 	ProjectSection(SolutionItems) = preProject
@@ -46,10 +44,6 @@ Global
 		{636169EE-3EC9-4332-BB1F-04A365890508}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{636169EE-3EC9-4332-BB1F-04A365890508}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{636169EE-3EC9-4332-BB1F-04A365890508}.Release|Any CPU.Build.0 = Release|Any CPU
-		{05CC712A-4BBD-40E3-A823-3F450C9E0DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{05CC712A-4BBD-40E3-A823-3F450C9E0DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{05CC712A-4BBD-40E3-A823-3F450C9E0DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{05CC712A-4BBD-40E3-A823-3F450C9E0DBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

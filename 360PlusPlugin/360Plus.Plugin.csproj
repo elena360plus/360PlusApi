@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\Program Files\Microsoft Dynamics CRM\Server\bin\assembly\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\..\Program Files\Microsoft Dynamics CRM\Server\bin\assembly\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -79,7 +79,7 @@
   <ItemGroup>
     <Compile Include="Entities\Account\AccountToSpire.cs" />
     <Compile Include="Entities\Contact\ContactToSpire.cs" />
-    <Compile Include="Entities\Opportunity\Opportunity_SetStateDynamicEntity.cs" />
+    <Compile Include="Entities\OpportunityClosed\OpportunityClosed_PreCreate.cs" />
     <Compile Include="Models\AddressSpire.cs" />
     <Compile Include="Models\baseSpire.cs" />
     <Compile Include="Models\ContactFirstLastName.cs" />
@@ -112,7 +112,9 @@
     <None Include="360PlusKey.snk" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Entities\Opportunity\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
