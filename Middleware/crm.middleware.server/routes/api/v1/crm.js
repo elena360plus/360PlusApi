@@ -14,7 +14,7 @@ let parameters = {
 const config = new crm.CrmAdConnectionConfig(parameters);
 const crmService = new crm.CrmService(config);
 
-let crmConnector = undefined
+let crmConnector = undefined;
 crmService.initialise()
     .then( crmConnector => console.log(crmConnector) )
     .catch( err => console.log("crmConnector::err: ", err) );
@@ -51,19 +51,33 @@ crmApi.get("/campaigns/:id?", async (req, res) =>
             });
 });
 
+/*
 
-crmApi.post("/campaigns/:id?", async (req, res) => 
+Entity campaignResponse = new Entity("campaignresponse");
+campaignResponse["subject"] = "Response from landing page";
+campaignResponse["description"] = "Created by landing page";
+campaignResponse["regardingobjectid"] = campaign.ToEntityReference();
+
+*/
+
+crmApi.post("/campaigns/:id/response", (req, res) => 
 {
-    
-    const query = "campaigns" + (req.param.id ? `(${req.param.id})` : "");
-    console.log(query);
-    crmService.post(query)
+    var entity = { 
+        subject: req.body.subject ? req.body.subject : "Response from email", 
+        responsecode: req.body.responsecode,
+        "regardingobjectid_campaign@odata.bind": `/campaigns(${req.params.id})`,
+    };  
+
+    crmService.post("campaignresponses", entity)
         .then(campaignsResponse => 
             {
-                res.send( campaignsResponse.body ); 
-            });
+                res.send( campaignsResponse ); 
+            })
+        .catch(err =>
+            {
+                res.send( err ); 
+            })
 });
-
 
 
 

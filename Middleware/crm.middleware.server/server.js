@@ -1,9 +1,10 @@
+const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 
 // const fetch = require("node-fetch");
 
-require("dotenv").config();
+require("dotenv").config({path: path.join(__dirname, ".env") });
 
 // const domain = "360plus.dev";
 // const username = "Administrator";

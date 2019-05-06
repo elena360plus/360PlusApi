@@ -9,8 +9,4 @@ apiV1.get("/", async (req, res)=>
 apiV1.use("/crm", require("./crm"));
 
 
-
-
-
-
 module.exports = apiV1;
