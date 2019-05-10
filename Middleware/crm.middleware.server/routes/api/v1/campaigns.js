@@ -11,14 +11,15 @@ const parameters = {
 };
 
 const customFields = {
-    "tsp_campaignurl": Number,
-    "tsp_pagecode": Number,
-    "tsp_noofsent": Number,
-    "tsp_noofpageopenings": Number,
-    "tsp_noofresponse": Number,
-    "tsp_noofinterested": Number,
-    "tsp_noofmaybelater": Number,
-    "tsp_noofunsubscribe": Number,
+    // "tsp_campaignurl": Number,
+    // "tsp_pagecode": Number,
+    // "tsp_noofsent": Number,
+    
+    "pageopenings": "tsp_noofpageopenings",
+    "response": "tsp_noofresponse",
+    "interested": "tsp_noofinterested",
+    "maybelater": "tsp_noofmaybelater",
+    "unsubscribe": "tsp_noofunsubscribe",
 }; 
 
 const config = new crm.CrmAdConnectionConfig(parameters);
@@ -82,15 +83,14 @@ campaignsApi.get("/:id/:value", async (req, res) =>
 {
     try
     {
-        const propName = `tsp_noof${req.params.value}`.toLocaleLowerCase();
-        if ( customFields[propName] != Number )
-            throw "unknown property name";
+        const propName = req.params.value && customFields[req.params.value];
+        // const propName = `tsp_noof${req.params.value}`.toLocaleLowerCase();
+        // if ( customFields[propName] != Number )
+        if ( !propName ) throw "unknown property name";
 
         const campaign = await loadCampaign(req.params.id);  
         if ( campaign && req.params.value)
         {
-            
-            
             // let tsp_noofpageopenings = Number.parseInt(campaign.tsp_noofpageopenings);
             // if ( isNaN(tsp_noofpageopenings) ) tsp_noofpageopenings = 0;
             let customValue = Number.parseInt(campaign[propName]);
@@ -130,10 +130,20 @@ campaignResponse["regardingobjectid"] = campaign.ToEntityReference();
 campaignsApi.post("/:id/response", (req, res) => 
 {
     var entity = { 
-        subject: req.body.subject ? req.body.subject : "Response from email", 
+        subject: req.body.subject ? req.body.subject : "eMail Response", 
         responsecode: req.body.responsecode,
+        
+        lastname: req.body.lastName,
+        firstname: req.body.firstName,
+        telephone: req.body.phone,
+        companyname: req.body.company,
+        description: req.body.description,
+        emailaddress: req.body.email,
+
         "regardingobjectid_campaign@odata.bind": `/campaigns(${req.params.id})`,
     };  
+
+    console.log("campaignresponses->entity: ", req.body, entity);
 
     crmService.post("campaignresponses", entity)
         .then(campaignsResponse => 
@@ -145,7 +155,6 @@ campaignsApi.post("/:id/response", (req, res) =>
                 res.send( err ); 
             })
 });
-
 
 
 

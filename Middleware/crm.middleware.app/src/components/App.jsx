@@ -1,15 +1,19 @@
 import React from 'react';
-import api from "../api";
-import {createNotification} from "../api/notifications";
+import { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-router-dom";
 
+import api from "../api";
 import {NotificationContainer} from 'react-notifications';
 import Loading from "./Loading/Loading";
 import './App.css';
 
-import Button from "react-bootstrap/Button";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
+// import Button from "react-bootstrap/Button";
+import Nav from "react-bootstrap/Nav"
+import Navbar from "react-bootstrap/Navbar";
+// import Container from "react-bootstrap/Container";
+// import Jumbotron from "react-bootstrap/Jumbotron";
 
+import Home from "./Home/Home";
+import ContactInfo from "./Pages/ContactInfo";
 import Unsubscribe from "./Pages/Unsubscribe";
 
 
@@ -28,32 +32,40 @@ class App extends React.Component
 
 	async componentWillMount()
 	{
-		const campaign = await api.campaign(this.state.params.campaign);
+		const campaign = await api.campaign();
 		this.setState({campaign: campaign});
 	}
 
 	render()
 	{
-		// console.log("campaign: ", this.state.campaign);
+		if ( api.params.campaign && ! this.state.campaign )
+		{
+			return <Loading />;
+		}
 
-		if ( ! this.state.campaign )
-			return ( <Loading />);
-
-		// /yes
-		// /no
-		// /maybe
 
 		return (
 			<>
-				<Jumbotron>
-					<h1>Hello, John</h1>
-					<p>
-						We are sorry to see you go !
-					</p>
-				</Jumbotron>
-				<Container>
-					<Unsubscribe />
-				</Container>
+				<Navbar bg="dark" variant="dark">
+					<Navbar.Brand>
+						{this.state.campaign && this.state.campaign.name}
+					</Navbar.Brand>
+					<Nav className="mr-auto"></Nav>
+					<Navbar.Text>360+ IT</Navbar.Text>
+				</Navbar>			
+
+				<Router>
+					{/* <Route path="/" exact component={Home} /> */}
+
+					<Switch>
+						<Route path="/interested" render={ (e) => <ContactInfo mandatoryOnly={false} /> } />
+						<Route path="/notInterested" render={ (e) => <ContactInfo mandatoryOnly={true} /> } />
+
+						<Route path="/unsubscribe" render={ (e) => <Unsubscribe />} />
+						<Route path="*" component={Home} />
+					</Switch> 
+
+				</Router>
 
 				<NotificationContainer/>
 			</>

@@ -1,12 +1,15 @@
 import React from 'react';
+import Container from "react-bootstrap/Container";
 import './Loading.css';
 
 function Loading()
 {
     return (
-        <div className="loading">
-            Loading...
-        </div>
+        <Container>
+            <div className="loading">
+                Loading...
+            </div>
+        </Container>
     );
 }
 
