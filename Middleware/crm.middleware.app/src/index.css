@@ -6,9 +6,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #e8e8e8;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+
+.jumbotron
+{
+  margin-top: -10px;
+  box-shadow: 0 10px 10px rgba(0,0,0,.5);
 }
