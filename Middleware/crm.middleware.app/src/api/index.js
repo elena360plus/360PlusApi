@@ -160,7 +160,8 @@ export function showNotification(type, message, title = undefined, delay = undef
 	// info | success | warning | error
 	if ( typeof NotificationManager[type] == "function" )
 	{
-		NotificationManager[type](message, title, delay);
+		NotificationManager[type](message, title, delay, 4000);
+
 	}
 
 	// switch (type) 
