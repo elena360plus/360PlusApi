@@ -51,14 +51,19 @@ class ContactInfo extends React.Component
 
         this.setState({ validated: true });
 
-
-        for(let i=0; i < formFields.length; i++)
+        if ( ! this.props.mandatoryOnly )
         {
-            if ( (!this.props.mandatoryOnly || formFields[i].mandatory) 
-                    && !this.state.data[formFields[i].name] )
-                return;
+            for(let i=0; i < formFields.length; i++)
+            {
+                if ( !this.state.data[formFields[i].name] )
+                    return;
+            }                     
         }
-
+        else if ( ! this.hasMandatoryValue() )
+        {
+            return;            
+        }
+           
 
         showNotification("success", "Thank you for your feedback");
         
