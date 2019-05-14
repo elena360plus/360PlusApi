@@ -37,6 +37,19 @@ class api
 		console.log("initialParams: ", this.params)	
 	}
 
+	landing = async ()=>
+	{
+		try
+		{
+			const landing = await fetch("/api/v1/landing");
+			return await landing.json();
+		}
+		catch(err)
+		{
+			console.log(err);
+		}
+	}
+
 	campaign = async (value)=>
 	{
 		try

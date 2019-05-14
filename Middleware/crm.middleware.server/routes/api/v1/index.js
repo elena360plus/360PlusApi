@@ -1,11 +1,12 @@
+const landing = require("../../../landing");
 const apiV1 = require("express").Router();
+
+apiV1.use("/campaigns", require("./campaigns"));
 
 apiV1.get("/", async (req, res)=>
 {
     res.send("Hello from CRM-Middleware");
 });
-
-apiV1.use("/campaigns", require("./campaigns"));
 
 
 apiV1.get("/crm", async (req, res) => 
@@ -20,6 +21,10 @@ apiV1.get("/crm", async (req, res) =>
             });
 });
 
+apiV1.get("/landing", async (req, res) => 
+{    
+    res.send( landing.cards ); 
+});
 
 
 
