@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "360PlusApi", "360PlusApi\360PlusApi.csproj", "{352E08E0-0B22-4AEA-BA8A-2C9D38CFC37D}"
 EndProject
@@ -26,6 +26,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CRMSolutions", "CRMSolution
 		\\tsclient\D\Spire Solition\CRM_Solutions\CRM Solutions 4_15_2019\SpireWebResources_1_0_0_0.zip = \\tsclient\D\Spire Solition\CRM_Solutions\CRM Solutions 4_15_2019\SpireWebResources_1_0_0_0.zip
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "360Plus.WebResources", "360Plus.WebResources\", "{29FB1FFB-FB01-49B2-A90C-AFA194E3C258}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_3599"
+		Debug.AspNetCompiler.PhysicalPath = "360Plus.WebResources\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3599\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_3599"
+		Release.AspNetCompiler.PhysicalPath = "360Plus.WebResources\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3599\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "3599"
+		SlnRelativePath = "360Plus.WebResources\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +66,10 @@ Global
 		{636169EE-3EC9-4332-BB1F-04A365890508}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{636169EE-3EC9-4332-BB1F-04A365890508}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{636169EE-3EC9-4332-BB1F-04A365890508}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29FB1FFB-FB01-49B2-A90C-AFA194E3C258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29FB1FFB-FB01-49B2-A90C-AFA194E3C258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29FB1FFB-FB01-49B2-A90C-AFA194E3C258}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{29FB1FFB-FB01-49B2-A90C-AFA194E3C258}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
