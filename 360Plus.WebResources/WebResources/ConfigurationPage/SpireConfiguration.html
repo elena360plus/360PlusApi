@@ -1,0 +1,123 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link href="Bootstrap3_3_7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+    <script src="../ClientGlobalContext.js.aspx"></script>
+
+    <!--custom styling-->
+    <style>
+        .top-buffer { margin-top:20px; }
+    </style>
+
+</head>
+<body style="-ms-word-wrap: break-word;">
+    ﻿
+
+    <div class="container-fluid">
+        <div class="row top-buffer">
+            <div class="col-xs-5 col-xs-offset-1">
+                <label for="ErpAPIURL">ErpAPI URL</label>
+                <input type="text" class="form-control" id="ErpAPIURL">
+
+            </div>
+            <div class="col-xs-5 col-xs-offset-1">
+                <label for="Company">Spire Company</label>
+                <input type="text" class="form-control" id="Company">
+            </div>
+        </div>
+
+
+        <div class="row top-buffer">
+            <div class="col-xs-2 col-xs-offset-10">
+                <button type="submit" class="btn btn-primary">Update Configuration</button>
+              </div>
+         </div>
+
+   </div>
+
+    <script>
+
+                var globalContext = Xrm.Utility.getGlobalContext();
+                var clientUrl = globalContext.getClientUrl();
+
+
+
+                function getData(callbackfunc)
+                {
+                    var customerid = getParamByName("id");
+                    if (customerid != "") customerid = customerid.substring(3, 39);
+
+                    var auSubscriptionDetailsRequest = {
+
+                        CustomerID: customerid,
+
+                        getMetadata: function ()
+                        {
+                            var metadata = {
+                                boundParameter: null,
+
+                                operationName: "sub_AuthUserSubscriptionsDetails",
+                                operationType: 0,
+                                parameterTypes: {
+                                    "CustomerID": {
+                                        structuralProperty: 1,
+                                        typeName: "Edm.String"
+                                    }
+                                }
+                            };
+
+                            return metadata;
+                        }
+                    };
+
+                    Xrm.WebApi.execute(auSubscriptionDetailsRequest)
+                        .then(function (result)
+                        {
+                            if (result.ok)
+                            {
+                                var data = JSON.parse(result.responseText);
+                                if (data != null || typeof data !== 'undefined')
+                                {
+
+                                    callbackfunc(JSON.parse(data.listOfVinsJson));
+                                }
+                            }
+                            //Handle retrieved data
+                        })
+                        .fail(function (error)
+                        {
+                            var message = error.message;
+                            console.log("Error : " + message);
+                            callbackfunc("Error : " + message);
+                        });
+
+                }
+
+
+                $(document).ready(function ()
+                {
+
+                    //set placeholders programmaticaly - populate current values fom config
+                });
+
+
+    </script>
+    <script src="Scripts/jquery_3.1.1.min.js"></script>
+    <script src="Bootstrap3_3_7/js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>
+
+
