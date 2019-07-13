@@ -17,6 +17,7 @@
     <!--custom styling-->
     <style>
         .top-buffer { margin-top:20px; }
+        .top-double-buffer { margin-top:40px; }
     </style>
 
 </head>
@@ -24,6 +25,42 @@
     ﻿
 
     <div class="container-fluid">
+        <div class="row top-buffer">
+            <div class="col-xs-5 col-xs-offset-1">
+                <label for="SpireBaseURL">Spire Base URL</label>
+                <input type="text" class="form-control" id="SpireBaseURL">
+
+            </div>
+            <div class="col-xs-5 col-xs-offset-1">
+                <label for="SpireCompany">Spire Company</label>
+                <input type="text" class="form-control" id="SpireCompany">
+            </div>
+        </div>
+
+        <div class="row top-buffer">
+            <div class="col-xs-5 col-xs-offset-1">
+                <label for="ErpAPIURL">ErpAPI URL</label>
+                <input type="text" class="form-control" id="ErpAPIURL">
+
+            </div>
+            <div class="col-xs-5 col-xs-offset-1">
+                <label for="Company">Spire Company</label>
+                <input type="text" class="form-control" id="Company">
+            </div>
+        </div>
+
+        <div class="row top-buffer">
+            <div class="col-xs-5 col-xs-offset-1">
+                <label for="ErpAPIURL">ErpAPI URL</label>
+                <input type="text" class="form-control" id="ErpAPIURL">
+
+            </div>
+            <div class="col-xs-5 col-xs-offset-1">
+                <label for="Company">Spire Company</label>
+                <input type="text" class="form-control" id="Company">
+            </div>
+        </div>
+
         <div class="row top-buffer">
             <div class="col-xs-5 col-xs-offset-1">
                 <label for="ErpAPIURL">ErpAPI URL</label>
@@ -37,8 +74,8 @@
         </div>
 
 
-        <div class="row top-buffer">
-            <div class="col-xs-2 col-xs-offset-10">
+        <div class="row top-double-buffer">
+            <div class="col-xs-5 col-xs-offset-1">
                 <button type="submit" class="btn btn-primary">Update Configuration</button>
               </div>
          </div>
